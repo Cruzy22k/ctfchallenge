@@ -37,5 +37,10 @@ chmod 640 /root/flag.txt
 chown root:root /root/flag.txt
 # makes root own this file coz we aint stupid we don wan some random deleting  # it or changing it.
 setfacl -m u:ctfadmin000:r /root/flag.txt
+#this is a hint file for people when they get access to ctfadmin000
+echo "I think there's something important in /root..." > /home/ctfadmin000/note.txt
+chown ctfadmin000:ctfadmin000 /home/ctfadmin000/note.txt
+chmod 600 /home/ctfadmin000/note.txt
+
 # here is where the magic happens, the ':r' allows ctfadmin read access of this # flag, why still keeping the enviroment secure
 echo "Setup complete. Reboot if needed."
