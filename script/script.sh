@@ -24,7 +24,6 @@ echo "added clipriv000"
 setfacl -m u:ctfadmin000:rx /root
 # -m is for modify, u is for the user, r for read, x for execute, (for 
 # directory travel) /root is the dir that we are talking about to the compter.
-
 chmod 700 /home/os_clipriv000 
 # this restricts the clipriv000 account to just read, write, execute, BUT only # in their home dir. it also stops other vm users from seeing stuff in there.
 echo "echo 'c2VjdXJlcGFzczEyMw==' | base64 --decode" >> /home/os_clipriv000/.bash_history
@@ -33,7 +32,8 @@ chown os_clipriv000:os_clipriv000 /home/os_clipriv000/.bash_history
 chmod 600 /home/os_clipriv000/.bash_history
 # we are also gonna add a hint file explaining what base64 is, and how to access its manpage. # its owned by root for best practice
 echo -e "Welcome player. This challenge teaches you how to use base64, and how chain attack and escalation of permissions can lead to massively scaling attack vectors. \nHint: look around, snoop in the history... learn how base64 works... good luck! \n Read the Challenge Markdown for more infomation" > /home/os_clipriv000/note.txt
-chown root:root /home/os_clipriv000/note.txt
+chown root:root /home/os_clipriv000/ -R
+chown root:root /home/os_clipriv000/
 chmod 400 /home/os_clipriv000/note.txt
 setfacl -m u:os_clipriv000:r /home/os_clipriv000/note.txt
 echo "did some sussy things, progressing to the next stage"
@@ -48,7 +48,7 @@ chown root:root /root/flag.txt
 # makes root own this file coz we aint stupid we don wan some random deleting  # it or changing it.
 setfacl -m u:ctfadmin000:r /root/flag.txt
 #this is a hint file for people when they get access to ctfadmin000
-echo "I think there's something important in /root..." > /home/ctfadmin000/note.txt
+echo "I think there's something importalnt in /root..." > /home/ctfadmin000/note.txt
 chown root:root /home/ctfadmin000/note.txt
 chmod 400 /home/ctfadmin000/note.txt
 setfacl -m u:ctfadmin000:r /home/ctfadmin000/note.txt
