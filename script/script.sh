@@ -31,9 +31,9 @@ echo "echo 'c2VjdXJlcGFzczEyMw==' | base64 --decode" >> /home/os_clipriv000/.bas
 chown os_clipriv000:os_clipriv000 /home/os_clipriv000/.bash_history
 chmod 600 /home/os_clipriv000/.bash_history
 # we are also gonna add a hint file explaining what base64 is, and how to access its manpage.
-echo "Welcome player. This challenge teaches you how to use base64, and how chain attactk and escalation of permissions can lead to massivly scaling attack vectors. Hint, look around, snoop in the history....learn how base64 works.....good luck!" > /home/os_clipriv000/note.txt
-chown admin:admin /home/ctfadmin000/note.txt
-chmod 640 /home/os_clipriv000/note.txt
+echo "Welcome player. This challenge teaches you how to use base64, and how chain attack and escalation of permissions can lead to massively scaling attack vectors. Hint: look around, snoop in the history... learn how base64 works... good luck!" > /home/os_clipriv000/note.txt
+chown admin:admin /home/os_clipriv000/note.txt
+chmod 644 /home/os_clipriv000/note.txt
 
 # these commands are for realisicness, first one sets the owner to clipriv000, # and the second one makes it so that only the owner can read/write.
 echo "CTF{a195d2ed41c0da0dfa1d08e196bff242}" | base64 > /root/flag.txt
