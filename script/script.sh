@@ -30,10 +30,11 @@ echo "echo 'c2VjdXJlcGFzczEyMw==' | base64 --decode" >> /home/os_clipriv000/.bas
 # this adds the 'mistake' command left in the bash history)
 chown os_clipriv000:os_clipriv000 /home/os_clipriv000/.bash_history
 chmod 600 /home/os_clipriv000/.bash_history
-# we are also gonna add a hint file explaining what base64 is, and how to access its manpage.
+# we are also gonna add a hint file explaining what base64 is, and how to access its manpage. # its owned by root for best practice
 echo "Welcome player. This challenge teaches you how to use base64, and how chain attack and escalation of permissions can lead to massively scaling attack vectors. Hint: look around, snoop in the history... learn how base64 works... good luck!" > /home/os_clipriv000/note.txt
-chown admin:admin /home/os_clipriv000/note.txt
-chmod 644 /home/os_clipriv000/note.txt
+chown root:root /home/os_clipriv000/note.txt
+chmod 400 /home/os_clipriv000/note.txt
+setfacl -m u:os_clipriv000:r /home/os_clipriv000/note.txt
 
 # these commands are for realisicness, first one sets the owner to clipriv000, # and the second one makes it so that only the owner can read/write.
 echo "CTF{a195d2ed41c0da0dfa1d08e196bff242}" | base64 > /root/flag.txt
@@ -44,8 +45,10 @@ chown root:root /root/flag.txt
 setfacl -m u:ctfadmin000:r /root/flag.txt
 #this is a hint file for people when they get access to ctfadmin000
 echo "I think there's something important in /root..." > /home/ctfadmin000/note.txt
-chown ctfadmin000:ctfadmin000 /home/ctfadmin000/note.txt
-chmod 600 /home/ctfadmin000/note.txt
+chown root:root /home/ctfadmin000/note.txt
+chmod 400 /home/ctfadmin000/note.txt
+setfacl -m u:ctfadmin000:r /home/ctfadmin000/note.txt
+
 
 # here is where the magic happens, the ':r' allows ctfadmin read access of this # flag, why still keeping the enviroment secure
 echo "Setup complete. Reboot if needed."
