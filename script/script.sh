@@ -49,6 +49,7 @@ chown root:root /home/ctfadmin000/note.txt
 chmod 400 /home/ctfadmin000/note.txt
 setfacl -m u:ctfadmin000:r /home/ctfadmin000/note.txt
 
-
+rm -r /root/script.sh
+echo "removed the script file"
 # here is where the magic happens, the ':r' allows ctfadmin read access of this # flag, why still keeping the enviroment secure
 echo "Setup complete. Reboot if needed."
