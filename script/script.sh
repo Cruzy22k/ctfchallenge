@@ -1,3 +1,4 @@
+#! /bin/bash
 #this is a draft of the full script. 
 useradd -m -s /bin/bash admin
 echo "admin:admin123" | chpasswd
