@@ -1,6 +1,8 @@
 #! /bin/bash
 #this is a draft of the full script. 
-
+CUR_VER = 1.22
+echo "current version is"
+echo $CUR_VER
 useradd -m -s /bin/bash admin
 echo "admin:admin123" | chpasswd
 usermod -aG wheel admin
@@ -29,9 +31,6 @@ setfacl -m u:ctfadmin000:rx /root
 
 #SETUP FOR OS_CLIPRIV
 
-chmod 700 /home/os_clipriv000 # ensure user can enter their home directory
-chown os_clipriv000:os_clipriv000 /home/os_clipriv000
-
 echo "echo 'c2VjdXJlcGFzczEyMw==' | base64 --decode" > /home/os_clipriv000/.bash_history
 chown root:root /home/os_clipriv000/.bash_history
 chmod 400 /home/os_clipriv000/.bash_history
@@ -44,20 +43,33 @@ echo -e "Welcome player. This challenge teaches you how to use base64, and how c
 chmod 400 /home/os_clipriv000/note.txt
 chown root:root /home/os_clipriv000/note.txt
 setfacl -m u:os_clipriv000:r /home/os_clipriv000/note.txt
+chown root:root /home/os_clipriv000
+chmod 555 /home/os_clipriv000
 
 # fake crap coz its cool
 echo "did some sussy things, progressing to the next stage"
 sleep 2
 echo "proccessing..."
 sleep 2
-
+echo "calculating the angle of differentiation"
+sleep 2
+echo "learning sleep patterns"
+sleep 1
+echo "Done! infomation collected and sent to China in... "
+echo "3"
+sleep 1
+echo "2"
+sleep 1
+echo "1"
+sleep 1
+echo "SENT!"
 ### SETUP FOR CTFADMIN000
 #this is a hint file for people when they get access to ctfadmin000
 echo "I think there's something important in /root..." > /home/ctfadmin000/note.txt  # creates a note file
 chown root:root /home/ctfadmin000/note.txt #makes the file owned by root
 chmod 400 /home/ctfadmin000/note.txt # read-only
 setfacl -m u:ctfadmin000:r /home/ctfadmin000/note.txt # lets the fake admin account read it
-chmod 500 /home/ctfadmin000 # owner can read , owner can ex
+chmod 555 /home/ctfadmin000 # owner can read , owner can ex
 chown root:root /home/ctfadmin000 # owner as root
 
 # creates the flag file
