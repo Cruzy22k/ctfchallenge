@@ -29,7 +29,7 @@ setfacl -m u:ctfadmin000:rx /root
 
 #SETUP FOR OS_CLIPRIV
 
-chmod 500 /home/os_clipriv000 # 500 is for read and ex for user
+chmod 544 /home/os_clipriv000 # 500 is for read and ex for user
 echo "echo 'c2VjdXJlcGFzczEyMw==' | base64 --decode" > /home/os_clipriv000/.bash_history
 chown root:root /home/os_clipriv000/.bash_history
 chmod 400 /home/os_clipriv000/.bash_history
