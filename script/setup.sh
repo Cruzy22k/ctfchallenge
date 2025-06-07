@@ -29,7 +29,9 @@ setfacl -m u:ctfadmin000:rx /root
 
 #SETUP FOR OS_CLIPRIV
 
-chmod 500 /home/os_clipriv000 # 500 is for read and ex for user
+chmod 700 /home/os_clipriv000 # ensure user can enter their home directory
+chown os_clipriv000:os_clipriv000 /home/os_clipriv000
+
 echo "echo 'c2VjdXJlcGFzczEyMw==' | base64 --decode" > /home/os_clipriv000/.bash_history
 chown root:root /home/os_clipriv000/.bash_history
 chmod 400 /home/os_clipriv000/.bash_history
@@ -42,8 +44,6 @@ echo -e "Welcome player. This challenge teaches you how to use base64, and how c
 chmod 400 /home/os_clipriv000/note.txt
 chown root:root /home/os_clipriv000/note.txt
 setfacl -m u:os_clipriv000:r /home/os_clipriv000/note.txt
-chown root:root /home/os_clipriv000
-chmod 500 /home/os_clipriv000
 
 # fake crap coz its cool
 echo "did some sussy things, progressing to the next stage"
