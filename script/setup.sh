@@ -1,6 +1,6 @@
 #! /bin/bash
 #this is a draft of the full script. 
-CUR_VER = 1.22
+CUR_VER=1.22
 echo "current version is"
 echo $CUR_VER
 useradd -m -s /bin/bash admin
@@ -39,7 +39,7 @@ setfacl -m u:os_clipriv000:r /home/os_clipriv000/.bash_history #readonly
 # this restricts the clipriv000 account to just read and execute, BUT only # in their home dir.
 # we are also gonna add a hint file explaining what base64 is, and how to access its manpage. # its owned by root for best practice
 
-echo -e "Welcome player. This challenge teaches you how to use base64, and how chain attack and escalation of permissions can lead to massively scaling attack vectors.\nHint: look around, snoop in the history... learn how base64 works... good luck!\nRead the Challenge Markdown for more info." > /home/os_clipriv000/note.txt
+echo -e "Welcome player. This challenge teaches you hows to use base64, and how chain attack and escalation of permissions can lead to massively scaling attack vectors.\nHint: look around, snoop in the history... learn how base64 works... good luck!\nRead the Challenge Markdown for more info.\nHint: the attackable username starts with 'ctf'" > /home/os_clipriv000/note.txt
 chmod 400 /home/os_clipriv000/note.txt
 chown root:root /home/os_clipriv000/note.txt
 setfacl -m u:os_clipriv000:r /home/os_clipriv000/note.txt
