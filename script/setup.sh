@@ -86,3 +86,4 @@ setfacl -m u:ctfadmin000:r /root/flag.txt
 #echo "removed the script file"
 
 echo "Setup complete. Reboot if needed."
+echo "Made with ❤️ by cruzy"
